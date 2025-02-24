@@ -16,10 +16,19 @@
                             <field name="ngay_sinh"/>
                             <field name="que_quan"/>
                             <field name="email"/>
+                            <field name="so_dien_thoai"/>
+                            <field name="tuoi"/>
+                            <field name="anh"/>
                         </group>
                         <notebook>
                             <page string = "Danh sách lịch sử công tác">
                                 <field name="lich_su_cong_tac_ids"/>
+                            </page>
+                            <page string = "Danh sách hợp đồng lao động">
+                                <field name="hop_dong_lao_dong_ids"/>
+                            </page>
+                            <page string = "Danh sách chứng chỉ bằng cấp">
+                                <field name="chung_chi_bang_cap_ids"/>
                             </page>
                         </notebook>
                     </sheet>
@@ -39,6 +48,9 @@
                     <field name="ngay_sinh"/>
                     <field name="que_quan"/>
                     <field name="email"/>
+                    <field name="so_dien_thoai"/>
+                    <field name="tuoi"/>
+                    <field name="anh"/>
                 </tree>
             </field>
         </record>
@@ -54,6 +66,20 @@
                     <field name="ngay_sinh"/>
                     <field name="que_quan"/>
                     <field name="email"/>
+                    <field name="so_dien_thoai"/>
+                    <field name="tuoi"/>
+                    <field name="anh"/>
+                </search>
+            </field>
+        </record>
+
+        <record id="nhan_vien_search" model="ir.ui.view">
+            <field name="name">nhan_vien_search</field>
+            <field name="model">nhan_vien</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="ma_dinh_danh" string="Mã định danh"/>
+                    <field name="ho_va_ten" string="Họ và tên"/>
                 </search>
             </field>
         </record>

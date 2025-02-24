@@ -29,6 +29,8 @@
         'views/phong_ban.xml',
         'views/chuc_vu.xml',
         'views/lich_su_cong_tac.xml',
+        'views/hop_dong_lao_dong.xml',
+        'views/chung_chi_bang_cap.xml',
         'views/menu.xml',
     ],
     # only loaded in demonstration mode
