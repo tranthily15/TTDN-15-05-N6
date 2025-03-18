@@ -1,0 +1,44 @@
+<!-- <?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_nhan_vien_dashboard" model="ir.ui.view">
+            <field name="name">nhan_vien_dashboard</field>
+            <field name="model">nhan_vien</field>
+            <field name="arch" type="xml">
+                <dashboard>
+                    <graph type="bar" string="Số lượng nhân viên theo phòng ban">
+                        <field name="phong_ban" groupby="1"/>
+                        <field name="id" operator="count"/>
+                    </graph>
+                    
+                    <graph type="pie" string="Tỷ lệ nam/nữ trong công ty">
+                        <field name="gioi_tinh" groupby="1"/>
+                        <field name="id" operator="count"/>
+                    </graph>
+                    
+                    <graph type="bar" string="Số lượng nhân viên theo độ tuổi">
+                        <field name="tuoi" groupby="1" interval="5"/>
+                        <field name="id" operator="count"/>
+                    </graph>
+                    
+                    <graph type="bar" string="Số ngày nghỉ trung bình theo phòng ban" orientation="horizontal">
+                        <field name="phong_ban" groupby="1"/>
+                        <field name="songaynghi" operator="avg"/>
+                    </graph>
+                    
+                    <graph type="line" string="Số lượng nhân viên theo năm gia nhập">
+                        <field name="ngay_vao_con_ty" groupby="year"/>
+                        <field name="id" operator="count"/>
+                    </graph>
+                </dashboard>
+            </field>
+        </record>
+        
+        <record id="action_nhan_vien_dashboard" model="ir.actions.act_window">
+            <field name="name">Thống kê Nhân viên</field>
+            <field name="res_model">nhan_vien</field>
+            <field name="view_mode">dashboard</field>
+            <field name="view_id" ref="view_nhan_vien_dashboard"/>
+        </record>
+    </data>
+</odoo> -->

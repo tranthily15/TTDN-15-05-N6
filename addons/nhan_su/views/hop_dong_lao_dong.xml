@@ -7,10 +7,17 @@
             <field name="arch" type="xml">
                 <form>
                     <sheet>
-                        <div class="oe_read_only" style="font-size:25px">chuc vu</div>
+                        <div class="oe_read_only" style="font-size:25px">Hợp đồng lao động</div>
                         <group col="4" string="Thông tin chung">
                             <field name="nhan_vien_id"/>
                             <field name="trang_thai"/>
+                            <field name="loai_hop_dong"/>
+                            <field name="ngay_ky"/>
+                            <field name="ngay_bat_dau"/>
+                            <field name="ngay_ket_thuc"/>
+                            <field name="luong_co_ban"/>
+                            <field name="phu_cap"/>
+                            <field name="dieu_khoan"/>
                         </group>
                     </sheet>
                 </form>
@@ -24,6 +31,13 @@
                 <tree>
                     <field name="nhan_vien_id"/>
                     <field name="trang_thai"/>
+                    <field name="loai_hop_dong"/>
+                    <field name="ngay_ky"/>
+                    <field name="ngay_bat_dau"/>
+                    <field name="ngay_ket_thuc"/>
+                    <field name="luong_co_ban"/>
+                    <field name="phu_cap"/>
+                    <field name="dieu_khoan"/>
                 </tree>
             </field>
         </record>
@@ -32,7 +46,17 @@
             <field name="model">hop_dong_lao_dong</field>
             <field name="arch" type="xml">
                 <search>
-                        <field name="trang_thai"/>
+                    <field name="trang_thai"/>
+                    <field name="loai_hop_dong"/>
+                    <field name="ngay_ky"/>
+                    <field name="ngay_bat_dau"/>
+                    <field name="ngay_ket_thuc"/>
+                    <field name="luong_co_ban"/>
+                    <field name="phu_cap"/>
+                    <field name="dieu_khoan"/>
+                    <searchpanel>
+                        <field name="nhan_vien_id" select="multi"/>
+                    </searchpanel>
                 </search>
             </field>
         </record>

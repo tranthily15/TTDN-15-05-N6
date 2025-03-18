@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_khoa_dao_tao_form" model="ir.ui.view">
+            <field name="name">khoa_dao_tao.form</field>
+            <field name="model">khoa_dao_tao</field>
+            <field name="arch" type="xml">
+                <form string="Thông tin khóa đào tạo">
+                    <sheet>
+                        <group col="2" string="Thông tin chung">
+                            <group>
+                                <field name="ma_khoa_dao_tao"/>
+                                <field name="name"/>
+                                <field name="phong_ban_id"/>
+                                <field name="mo_ta"/>
+                                <field name="ghi_chu"/>
+                            </group>
+                            <group>
+                                <field name="dia_diem"/>
+                                <field name="ngay_dao_tao"/>
+                                <field name="gio_bat_dau" widget="float_time"/>
+                                <field name="gio_ket_thuc" widget="float_time"/>
+                                <field name="tong_so_gio"/>
+                            </group>
+                        </group>
+                        <group string="Danh sách nhân viên tham gia">
+                            <field name="danh_sach_nhan_vien_ids">
+                                <tree editable="bottom">
+                                    <field name="nhan_vien_id"/>
+                                    <field name="email"/>
+                                    <field name="so_dien_thoai"/>
+                                    <field name="gioi_tinh"/>
+                                    <field name="chuc_vu"/>
+                                    <field name="phong_ban"/>
+                                </tree>
+                                <search>
+                                    <searchpanel>
+                                        <field name="phong_ban_id" select="multi"/>
+                                    </searchpanel>
+                                </search>
+                            </field>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_khoa_dao_tao_tree" model="ir.ui.view">
+            <field name="name">khoa_dao_tao.tree</field>
+            <field name="model">khoa_dao_tao</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="ma_khoa_dao_tao"/>
+                    <field name="name"/>
+                    <field name="dia_diem"/>
+                    <field name="ngay_dao_tao"/>
+                    <field name="gio_bat_dau" widget="float_time"/>
+                    <field name="gio_ket_thuc" widget="float_time"/>
+                    <field name="tong_so_gio"/>
+                    <field name="phong_ban_id"/>
+                    
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_khoa_dao_tao_search" model="ir.ui.view">
+            <field name="name">khoa_dao_tao.search</field>
+            <field name="model">khoa_dao_tao</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="ma_khoa_dao_tao"/>
+                    <field name="name"/>
+                    <field name="dia_diem"/>
+                    <field name="ngay_dao_tao"/>
+                    <field name="gio_bat_dau" widget="float_time"/>
+                    <field name="gio_ket_thuc" widget="float_time"/>
+                    <field name="phong_ban_id"/>
+                    <searchpanel>
+                        <field name="phong_ban_id" select="multi"/>
+                    </searchpanel>
+                </search>
+            </field>
+        </record>
+
+        <record id="action_khoa_dao_tao" model="ir.actions.act_window">
+            <field name="name">Khóa đào tạo</field>
+            <field name="res_model">khoa_dao_tao</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="view_khoa_dao_tao_search"/>
+        </record>
+    </data>
+</odoo>

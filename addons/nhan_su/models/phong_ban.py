@@ -6,4 +6,19 @@ class PhongBan(models.Model):
 
     ma_phong_ban = fields.Char("Mã phòng ban", required=True)
     ten_phong_ban = fields.Char("Tên phòng ban", required=True)
-    lich_su_cong_tac_ids = fields.One2many ("lich_su_cong_tac", inverse_name="phong_ban_id", string="Lịch sử công tác")
+    mo_ta = fields.Text("Mô tả")
+    lich_su_cong_tac_ids = fields.One2many ("lich_su_cong_tac", 
+                                            inverse_name="phong_ban_id", 
+                                            string="Lịch sử công tác")
+    khoa_dao_tao_ids = fields.One2many ("khoa_dao_tao",
+                                        inverse_name="phong_ban_id", 
+                                        string="Khóa đào tạo")
+
+    def name_get(self):
+        result = []
+        for record in self:
+            name = f"{record.ma_phong_ban} - {record.ten_phong_ban}"
+            result.append((record.id, name))
+        return result
+    
+    

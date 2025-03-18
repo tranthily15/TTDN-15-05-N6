@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_thong_ke_nhan_su_graph" model="ir.ui.view">
+            <field name="name">thong_ke_nhan_su.graph</field>
+            <field name="model">lich_su_cong_tac</field>
+            <field name="arch" type="xml">
+                <graph type="bar" string="Số lượng nhân viên theo phòng ban">
+                    <field name="phong_ban_id" type="row"/>
+                    <field name="nhan_vien_id" type="measure"/>
+                </graph>
+            </field>
+        </record>
+
+        <record id="view_thong_ke_gioi_tinh_graph" model="ir.ui.view">
+            <field name="name">thong_ke_gioi_tinh.graph</field>
+            <field name="model">nhan_vien</field>
+            <field name="arch" type="xml">
+                <graph type="pie" string="Tỷ lệ nam/nữ trong công ty">
+                    <field name="gioi_tinh" type="row"/>
+                    <field name="id" type="measure"/>
+                </graph>
+            </field>
+        </record>
+
+       <record id="view_thong_ke_gio_dao_tao_tree" model="ir.ui.view">
+            <field name="name">thong_ke_gio_dao_tao.tree</field>
+            <field name="model">dao_tao_nhan_vien</field>  
+            <field name="arch" type="xml">
+            
+                <tree string="Thống kê số giờ đào tạo của nhân viên">
+                    <field name="nam_thong_ke"/>
+                    <field name="nhan_vien_id"/>
+                    <field name="chuc_vu"/>
+                    <field name="phong_ban"/>
+                    <field name="tong_so_gio_dao_tao_nam"/>
+                    <field name="trang_thai_dao_tao"/>
+                </tree>
+            </field>
+        </record>
+        
+
+
+        <record id="action_thong_ke_gio_dao_tao" model="ir.actions.act_window">
+            <field name="name">Thống kê giờ đào tạo</field>
+            <field name="res_model">dao_tao_nhan_vien</field>
+            <field name="view_mode">tree</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Không có dữ liệu. Hãy kiểm tra lại năm thống kê.
+                </p>
+            </field>
+        </record>
+
+        
+
+        <record id="action_thong_ke_nhan_su_graph" model="ir.actions.act_window">
+            <field name="name">Thống kê Nhân Sự</field>
+            <field name="res_model">lich_su_cong_tac</field>
+            <field name="view_mode">graph</field>
+            <field name="view_id" ref="view_thong_ke_nhan_su_graph"/>
+        </record>
+
+        <record id="action_thong_ke_gioi_tinh_graph" model="ir.actions.act_window">
+            <field name="name">Tỷ lệ Nam/Nữ</field>
+            <field name="res_model">nhan_vien</field>
+            <field name="view_mode">graph</field>
+            <field name="view_id" ref="view_thong_ke_gioi_tinh_graph"/>
+        </record>
+        
+
+
+
+        <menuitem id="menu_thong_ke_nhan_su" 
+            name="Thống kê Nhân Sự" 
+            parent="menu_root" 
+            sequence="1"/>
+
+        <menuitem id="menu_thong_ke_nhan_su_phong_ban" 
+            name="Nhân viên theo Phòng Ban" 
+            parent="menu_thong_ke_nhan_su" 
+            action="action_thong_ke_nhan_su_graph"/>
+
+        <menuitem id="menu_thong_ke_nhan_su_gioi_tinh"
+            name="Tỷ lệ Nam/Nữ" 
+            parent="menu_thong_ke_nhan_su" 
+            action="action_thong_ke_gioi_tinh_graph"/>
+
+        <menuitem id="menu_thong_ke_gio_dao_tao"
+            name="Thống kê giờ đào tạo"
+            parent="menu_thong_ke_nhan_su"
+            action="action_thong_ke_gio_dao_tao"/>
+
+      
+    </data>
+</odoo>

@@ -7,10 +7,23 @@
             <field name="arch" type="xml">
                 <form>
                     <sheet>
-                        <div class="oe_read_only" style="font-size:25px">Phong ban</div>
+                        <div class="oe_read_only" style="font-size:25px">Phòng ban</div>
                         <group col="4" string="Thông tin chung">
                             <field name="ma_phong_ban"/>
                             <field name="ten_phong_ban"/>
+                            <field name="mo_ta"/>
+                        </group>
+                        <group string="Lịch sử công tác">
+                            <field name="lich_su_cong_tac_ids" nolabel="1">
+                                <tree editable="bottom">
+                                    <field name="nhan_vien_id"/>
+                                    <field name="chuc_vu_id"/>
+                                    <field name="loai_chuc_vu"/>
+                                    <field name="trang_thai"/>
+                                    <field name="ngay_bat_dau"/>
+                                    <field name="ngay_ket_thuc"/>
+                                </tree>
+                            </field>
                         </group>
                     </sheet>
                 </form>
@@ -22,8 +35,10 @@
             <field name="model">phong_ban</field>
             <field name="arch" type="xml">
                 <tree>
-                     <field name="ma_phong_ban"/>
+                    <field name="ma_phong_ban"/>
                     <field name="ten_phong_ban"/>
+                    <field name="mo_ta"/>
+
                 </tree>
             </field>
         </record>
@@ -46,5 +61,3 @@
         </record>
     </data>
 </odoo>
-        
-    

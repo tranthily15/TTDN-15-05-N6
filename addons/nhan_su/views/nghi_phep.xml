@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_nghi_phep_form" model="ir.ui.view">
+            <field name="name">nghi_phep</field>
+            <field name="model">nghi_phep</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <h2>Đơn nghỉ phép</h2>
+                        <group col="2">
+                            <field name="nhan_vien_id"/>
+                            <field name="loai_nghi_phep"/>
+                            <field name="ngay_bat_dau"/>
+                            <field name="ngay_ket_thuc"/>
+                            <field name="so_ngay" readonly="1"/>
+                            <field name="ly_do"/>
+                            <field name="trang_thai" widget="statusbar" readonly="1"/>
+                        </group>
+                        <group>
+                            <button name="action_duyet" type="object" string="✔ Duyệt" class="btn-success"
+                                    attrs="{'invisible': [('trang_thai', '!=', 'cho_duyet')]}"/>
+                            <button name="action_tu_choi" type="object" string="❌ Từ chối" class="btn-danger"
+                                    attrs="{'invisible': [('trang_thai', '!=', 'cho_duyet')]}"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_nghi_phep_tree" model="ir.ui.view">
+            <field name="name">nghi_phep</field>
+            <field name="model">nghi_phep</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="nhan_vien_id"/>
+                    <field name="loai_nghi_phep"/>
+                    <field name="ngay_bat_dau"/>
+                    <field name="ngay_ket_thuc"/>
+                    <field name="so_ngay"/>
+                    <field name="ly_do"/>
+                    <field name="trang_thai" 
+                        decoration-danger="trang_thai == 'tu_choi'"
+                        decoration-success="trang_thai == 'da_duyet'"
+                        decoration-warning="trang_thai == 'cho_duyet'"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="nghi_phep_search" model="ir.ui.view">
+            <field name="name">nghi_phep</field>
+            <field name="model">nghi_phep</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="nhan_vien_id"/>
+                    <field name="loai_nghi_phep"/>
+                    <field name="ngay_bat_dau"/>
+                    <field name="ngay_ket_thuc"/>
+                    <field name="so_ngay"/>
+                    <field name="ly_do"/>
+                    <field name="trang_thai"/>
+                    <searchpanel>
+                        <field name="nhan_vien_id" select="multi"/>
+                    </searchpanel>
+                </search>
+            </field>
+        </record>
+
+        <record id="action_nghi_phep" model="ir.actions.act_window">
+            <field name="name">Nghỉ phép</field>
+            <field name="res_model">nghi_phep</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="nghi_phep_search"/>
+        </record>
+
+        <menuitem id="menu_nghi_phep_root" name="Quản lý nghỉ phép"/>
+        <menuitem id="menu_nghi_phep" name="Danh sách nghỉ phép" parent="menu_nghi_phep_root"
+                  action="action_nghi_phep"/>
+    </data>
+</odoo>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_nhan_vien_khoa_dao_tao_form" model="ir.ui.view">
+            <field name="name">nhan_vien_khoa_dao_tao.form</field>
+            <field name="model">nhan_vien_khoa_dao_tao</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_read_only" style="font-size:25px">danh sách nhân viên học khóa đào tạo</div>
+                        <group col="4" string="Thông tin chung">
+                            <field name="khoa_dao_tao_id"/>
+                            <field name="nhan_vien_id"/>
+                            <field name="ma_nhan_vien"/>
+                            <field name="ho_va_ten"/>
+                            <field name="email"/>
+                            <field name="so_dien_thoai"/>
+                            <field name="gioi_tinh"/>
+                            <field name="ngay_dang_ky"/>
+                            <field name="trang_thai"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_nhan_vien_khoa_dao_tao_tree" model="ir.ui.view">
+            <field name="name">nhan_vien_khoa_dao_tao.tree</field>
+            <field name="model">nhan_vien_khoa_dao_tao</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="khoa_dao_tao_id"/>
+                    <field name="nhan_vien_id"/>
+                    <field name="ma_nhan_vien"/>
+                    <field name="ho_va_ten"/>
+                    <field name="email"/>
+                    <field name="so_dien_thoai"/>
+                    <field name="gioi_tinh"/>
+                    <field name="ngay_dang_ky"/>
+                    <field name="trang_thai"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_nhan_vien_khoa_dao_tao_search" model="ir.ui.view">
+            <field name="name">nhan_vien_khoa_dao_tao.search</field>
+            <field name="model">nhan_vien_khoa_dao_tao</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="khoa_dao_tao_id"/>
+                    <field name="nhan_vien_id"/>
+                    <field name="ma_nhan_vien"/>
+                    <field name="ho_va_ten"/>
+                    <field name="email"/>
+                    <field name="so_dien_thoai"/>
+                    <field name="gioi_tinh"/>
+                    <field name="ngay_dang_ky"/>
+                    <field name="trang_thai"/>
+                    <searchpanel>
+                        <field name="khoa_dao_tao_id" select="multi"/>
+                        <field name="nhan_vien_id" select="multi"/>
+                    </searchpanel>
+                </search>
+            </field>
+        </record>
+
+        <record id="action_nhan_vien_khoa_dao_tao" model="ir.actions.act_window">
+            <field name="name">Danh sách nhân viên tham gia khóa học đào tạo</field>
+            <field name="res_model">nhan_vien_khoa_dao_tao</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="view_nhan_vien_khoa_dao_tao_search"/>
+        </record>
+    </data>
+</odoo>
