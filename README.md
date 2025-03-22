@@ -1,4 +1,4 @@
----
+![image](https://github.com/user-attachments/assets/b31dbfb1-7c7d-45c4-b06a-8caa5464ce3f)---
 ![Ubuntu](https://img.shields.io/badge/Ubuntu-E95420?style=for-the-badge&logo=ubuntu&logoColor=white)
 ![GitLab](https://img.shields.io/badge/gitlab-%23181717.svg?style=for-the-badge&logo=gitlab&logoColor=white)
 ![Postgres](https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white)
@@ -67,6 +67,21 @@ python3 odoo-bin.py -c odoo.conf -u all
 ```
 
 Người sử dụng truy cập theo đường dẫn _http://localhost:8069/_ để đăng nhập vào hệ thống.
-
+# 5. cài đặt module quản lý nhân sự
+Tìm kiếm 
+```
+nhan_su 
+```
+và cài đặt.
+#6. Các chức năng chính của module nhân sự 
+- Quản lý nhân viên: Lưu trữ thông tin cá nhân, hợp đồng lao động, lịch sử công tác, đào tạo, nghỉ phép, bảo hiểm, và chế độ đãi ngộ.
+- Quản lý phòng ban và chức vụ: Xây dựng hệ thống phân cấp phòng ban, vị trí công tác và quan hệ báo cáo.
+- Quản lý bảng lương: Tính toán lương theo hợp đồng, phụ cấp, thuế, bảo hiểm và các khoản khấu trừ khác.
+![image](https://github.com/user-attachments/assets/af289a64-f4a8-4d56-8988-129e8829cea1)
+- Quản lý nghỉ phép: Theo dõi ngày nghỉ của nhân viên.
+- Báo cáo nhân sự: Xây dựng các báo cáo tổng hợp về nhân sự
+- Quản lý chứng chỉ bằng cấp: Cập nhật chứng chỉ bằng cấp của từng nhân viên
+- quản lý khóa đào tạo: xây dựng những khóa đào tạo đồng thời quản lý số giờ tham gia khóa đào tạo của nhân viên
 Hoàn tất
+
     
