@@ -66,13 +66,15 @@ python3 odoo-bin.py -c odoo.conf -u all
 ```
 
 Người sử dụng truy cập theo đường dẫn _http://localhost:8069/_ để đăng nhập vào hệ thống.
+
 # 5. Cài đặt module quản lý nhân sự
 Tìm kiếm 
 ```
 nhan_su 
 ```
 và cài đặt.
-#6. Các chức năng chính của module nhân sự 
+
+# 6. Các chức năng chính của module nhân sự 
 - Quản lý nhân viên: Lưu trữ thông tin cá nhân, hợp đồng lao động, lịch sử công tác, đào tạo, nghỉ phép, bảo hiểm, và chế độ đãi ngộ.
 - Quản lý phòng ban và chức vụ: Xây dựng hệ thống phân cấp phòng ban, vị trí công tác và quan hệ báo cáo.
 - Quản lý bảng lương: Tính toán lương theo hợp đồng, phụ cấp, thuế, bảo hiểm và các khoản khấu trừ khác.
@@ -81,7 +83,7 @@ và cài đặt.
 - Quản lý chứng chỉ bằng cấp: Cập nhật chứng chỉ bằng cấp của từng nhân viên
 - quản lý khóa đào tạo: xây dựng những khóa đào tạo đồng thời quản lý số giờ tham gia khóa đào tạo của nhân viên
   
-#7. Một số hình ảnh ứng dụng thực tế
+# 7. Một số hình ảnh ứng dụng thực tế
 ![image](https://github.com/user-attachments/assets/a59d8bb1-0031-4f9a-a71a-7607206e8602)
 
 ![image](https://github.com/user-attachments/assets/444aef86-f293-4e72-8a1e-4805fcd5494c)
